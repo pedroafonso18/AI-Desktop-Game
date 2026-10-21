@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: 'Silkscreen'; src: url('../assets/fonts/silkscreen-latin.woff2') format('woff2'); font-display: block; }
+  @font-face { font-family: 'Silkscreen'; src: url('../assets/fonts/silkscreen-latin-ext.woff2') format('woff2'); unicode-range: U+0100-024F; font-display: block; }
+  @font-face { font-family: 'PressStart2P'; src: url('../assets/fonts/pressstart2p-latin.woff2') format('woff2'); font-display: block; }
+  html,body { margin:0; background:#111; }
+  canvas { image-rendering: pixelated; width: 1440px; height: 810px; display:block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="480" height="270"></canvas>
+<script>
+const ctx = document.getElementById('c').getContext('2d');
+ctx.imageSmoothingEnabled = false;
+const samples = [
+  ['Silkscreen', 7], ['Silkscreen', 8], ['Silkscreen', 9], ['Silkscreen', 10],
+  ['PressStart2P', 8], ['PressStart2P', 16],
+];
+let y = 4;
+for (const [fam, size] of samples) {
+  ctx.fillStyle = '#000'; ctx.fillRect(0, y, 480, 24);
+  ctx.fillStyle = '#8cf'; ctx.font = `${size}px ${fam}`; ctx.textBaseline = 'top';
+  ctx.fillText(`ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 !?.,:;'"()[]{}<>/*\\+-=@#$%&|^~_`, 2, y + 2);
+  ctx.fillStyle = '#fc6'; ctx.font = '7px Silkscreen';
+  ctx.fillText(`${fam} ${size}px | The quick brown fox jumps over the lazy dog 12345 | Portuguese: ação, coração, não, trêm`, 2, y + 13);
+  y += 26;
+}
+</script>
+</body>
+</html>

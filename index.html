@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>CRACK'D - a desktop simulator about bad decisions</title>
+<meta name="description" content="A pixel art desktop simulator where you try to download a pirated game. Every site lies. One of them is telling the truth.">
+<link rel="stylesheet" href="src/fonts.css">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23120c26'/><rect x='4' y='3' width='8' height='3' fill='%23e2554f'/><rect x='5' y='6' width='6' height='5' fill='%239fb2d6'/><rect x='6' y='12' width='4' height='2' fill='%236c7ea8'/></svg>">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="screen" width="480" height="270"></canvas>
+    <div id="crt"></div>
+  </div>
+  <noscript><p style="color:#fff;font-family:monospace">This game needs JavaScript.</p></noscript>
+
+  <script src="src/core.js"></script>
+  <script src="src/art.js"></script>
+  <script src="src/audio.js"></script>
+  <script src="src/data.js"></script>
+  <script src="src/os.js"></script>
+  <script src="src/browser.js"></script>
+  <script src="src/apps.js"></script>
+  <script src="src/minigame.js"></script>
+  <script src="src/game.js"></script>
+  <script>
+    window.GAME.init();
+  </script>
+</body>
+</html>
